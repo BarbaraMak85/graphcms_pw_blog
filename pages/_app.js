@@ -2,12 +2,15 @@ import React from "react";
 
 import "../styles/globals.scss";
 import { Layout } from "../components";
+import { CookiesProvider } from "react-cookie";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <CookiesProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </CookiesProvider>
   );
 }
 
